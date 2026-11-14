@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joeymhar | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+}
+
+nav {
+    padding: 18px 8%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid blue;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+}
+
+.logo span, h1 span, h2 {
+    color: deepskyblue;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: deepskyblue;
+}
+
+section {
+    padding: 70px 10%;
+    scroll-margin-top: 70px;
+}
+
+#home {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, black, darkblue, indigo);
+}
+
+h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+p {
+    color: lightgray;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.content {
+    background: midnightblue;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#education, #java {
+    background: darkslateblue;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.skill {
+    background: darkblue;
+    color: lightskyblue;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+pre {
+    background: black;
+    color: lightskyblue;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+footer {
+    background: black;
+    border-top: 1px solid blue;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2 class="logo">JOEYMHAR G ROQUE</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#personal">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#java">Java Code</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <h3> MY PORTFOLIO</h3>
+    <h1>Hi, I'm <span>Joeymhar!</span></h1>
+
+    <p>
+        I am an Information Technology student who enjoys
+        learning programming, exploring technology, and
+        improving my skills.
+    </p>
+</section>
+
+<section id="personal">
+    <h2>Personal Information</h2>
+
+    <div class="content">
+        <p><b>Full Name:</b> Joeymhar G. Roque</p>
+        <p><b>Course:</b> BS Information Technology</p>
+        <p><b>Interests:</b> Programming, Basketball, Fitness</p>
+        <p><b>About Me:</b> I enjoy learning new things,
+        especially about computers and technology.</p>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Educational Background</h2>
+
+    <div class="content">
+        <p><b>College:</b> BS Information Technology</p>
+        <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+        <p><b>Senior High School:</b> GUIMBA SENIOR HIGH SCHOOL</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills and Interests</h2>
+
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Java</div>
+        <div class="skill">Computer Skills</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Basketball</div>
+        <div class="skill">Fitness</div>
+    </div>
+</section>
+
+<section id="java">
+    <h2>My Java Project</h2>
+
+    <div class="content">
+        <p><b>CC102 - Final Performance Task</b></p>
+        <p>
+            My Java project demonstrates my knowledge
+            of programming, loops, and conditions.
+        </p>
+
+        <pre>
+import java.util.Scanner;
+
+public class Arrange the grade {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double[] grades = new double[15];
+
+        double sum = 0;
+        double average;
+
+        int above = 0;
+        int below = 0;
+        int equal = 0;
+
+        // Input 15 grades
+        for (int i = 0; i < grades.length; i++) {
+
+            while (true) {
+                System.out.print("Enter grade of student " + (i + 1) + " (0-100): ");
+
+                double grade = input.nextDouble();
+
+                if (grade >= 0 && grade <= 100) {
+                    grades[i] = grade;
+                    sum += grades[i];
+                    break;
+                } else {
+                    System.out.println("Invalid grade! Enter 0 to 100 only.");
+                }
+            }
+        }
+
+        // Calculate average
+        average = sum / grades.length;
+
+        // Find highest and lowest grades
+        double highest = grades[0];
+        double lowest = grades[0];
+
+        for (int i = 0; i < grades.length; i++) {
+
+            if (grades[i] > highest) {
+                highest = grades[i];
+            }
+
+            if (grades[i] < lowest) {
+                lowest = grades[i];
+            }
+
+            // Compare grades with average
+            if (grades[i] > average) {
+                above++;
+            } else if (grades[i] < average) {
+                below++;
+            } else {
+                equal++;
+            }
+        }
+
+        // Manual ascending sorting (Bubble Sort)
+        for (int i = 0; i < grades.length - 1; i++) {
+
+            for (int j = 0; j < grades.length - 1 - i; j++) {
+
+                if (grades[j] > grades[j + 1]) {
+
+                    double temp = grades[j];
+                    grades[j] = grades[j + 1];
+                    grades[j + 1] = temp;
+
+                }
+            }
+        }
+
+        // Display results
+        System.out.println("\n===== MIDTERM GRADE RESULTS =====");
+
+        System.out.printf("Average Grade: %.2f%n", average);
+        System.out.println("Grades Above Average: " + above);
+        System.out.println("Grades Below Average: " + below);
+        System.out.println("Grades Equal to Average: " + equal);
+
+        System.out.println("Highest Grade: " + highest);
+        System.out.println("Lowest Grade: " + lowest);
+
+        System.out.println("\nGrades in Ascending Order:");
+
+        for (int i = 0; i < grades.length; i++) {
+            System.out.println("Index " + i + ": " + grades[i]);
+        }
+
+        input.close();
+    }
+}        </pre>
+    </div>
+</section>
+
+
+</body>
+</html>
